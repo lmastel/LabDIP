@@ -1,7 +1,5 @@
 package dip.lab1.student.solution1;
 
-import dip.lab1.*;
-
 /**
  * A simple implementation sub-class of Employee. These are low-level classes
  * in the DIP. Does it meet the rules of DIP? If not fix it.
@@ -16,7 +14,11 @@ public class SalariedEmployee implements Employee {
     private double annualBonus;  //moved from Employee class
 
     /** default constructor. Is this the best way to go? */
-    public SalariedEmployee() {}
+    //I don't think having a default constructor is the best way.
+    //I want the data passed through the paramatized constructor and
+    //I want the constuctors and called methods to be consistent with
+    //the Hourly Employee class.
+    //public SalariedEmployee() {}
 
     /**
      * Convenience constructor. Is this the best way to go?
@@ -49,6 +51,8 @@ public class SalariedEmployee implements Employee {
         this.annualSalary = annualSalary;
     }
 
+    //annualBonus was missing from the annual compenstion claculation
+    //so it was added
     @Override
     public double getAnnualCompensation() {
         return annualSalary + annualBonus;

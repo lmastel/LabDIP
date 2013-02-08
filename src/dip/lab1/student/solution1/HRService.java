@@ -1,8 +1,5 @@
 package dip.lab1.student.solution1;
 
-import dip.lab1.*;
-import javax.swing.JOptionPane;
-
 /**
  * A high-level class that delegates to employee objects to do the work. Does
  * this class design follow the DIP? If not, fix it.

@@ -1,7 +1,5 @@
 package dip.lab1.student.solution1;
 
-import dip.lab1.*;
-
 /**
  * The concrete super class of all employee types. What's wrong with this class?
  * Find and fix all encapsulation, DIP and best practice problems learned
@@ -108,6 +106,10 @@ public interface Employee {
 //        this.totalHrsForYear = totalHrsForYear;
 //    }
     
+    //added abstract method getAnnualCompensation so it can used by both
+    //and future Employee subsclasses. This method covers annual wages for
+    //hourly employess and and annual salary plus bonus,if any, for
+    //salaried employees.    
     public abstract double getAnnualCompensation();
 
 }
