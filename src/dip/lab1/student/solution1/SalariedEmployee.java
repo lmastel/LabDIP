@@ -51,6 +51,6 @@ public class SalariedEmployee implements Employee {
 
     @Override
     public double getAnnualCompensation() {
-        return annualSalary;
+        return annualSalary + annualBonus;
     }
 }
