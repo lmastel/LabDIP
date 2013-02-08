@@ -76,24 +76,29 @@ public class HRService {
      */
     
     //no longer needed
-    public double getAnnualCompensationForEmployee(Employee e) {
-        double annualCompensation = 0;
-
-        // One example of using fragile if logic to determine employee type.
-        // If only we could use polymorphism!
-        // NOTE: you don't need both versions (the one above and this one).
-        // Find a single, better way, using DIP principles.
-        if(e instanceof HourlyEmployee) {
-            annualCompensation = e.getAnnualWages();
-
-        } else if(e instanceof SalariedEmployee) {
-            annualCompensation = e.getAnnualSalary();
-
-        } else {
-            JOptionPane.showMessageDialog(
-                    null, ERROR_MSG, ERROR_TITLE, JOptionPane.ERROR_MESSAGE);
-        }
-
-        return annualCompensation;
+//    public double getAnnualCompensationForEmployee(Employee e) {
+//        double annualCompensation = 0;
+//
+//        // One example of using fragile if logic to determine employee type.
+//        // If only we could use polymorphism!
+//        // NOTE: you don't need both versions (the one above and this one).
+//        // Find a single, better way, using DIP principles.
+//        if(e instanceof HourlyEmployee) {
+//            annualCompensation = e.getAnnualWages();
+//
+//        } else if(e instanceof SalariedEmployee) {
+//            annualCompensation = e.getAnnualSalary();
+//
+//        } else {
+//            JOptionPane.showMessageDialog(
+//                    null, ERROR_MSG, ERROR_TITLE, JOptionPane.ERROR_MESSAGE);
+//        }
+//
+//        return annualCompensation;
+//    }
+    
+    
+    public double getAnnualCompensationForEmployee(Employee e){
+        return e.getAnnualCompensation();
     }
 }
