@@ -44,6 +44,7 @@ public class Startup {
 //            nf.format(hr.getAnnualCompensationForEmployee(emp3,
 //            HRService.SALARIED_TYPE)));
         
+        //println statement now operates just like employee 1 and 2
         System.out.println("Employee 3 annual compensation: " +
             nf.format(hr.getAnnualCompensationForEmployee(emp3)));
         

@@ -17,7 +17,7 @@ public class SalariedEmployee implements Employee {
     //I don't think having a default constructor is the best way.
     //I want the data passed through the paramatized constructor and
     //I want the constuctors and called methods to be consistent with
-    //the Hourly Employee class.
+    //the HourlyEmployee class.
     //public SalariedEmployee() {}
 
     /**
@@ -36,7 +36,8 @@ public class SalariedEmployee implements Employee {
     }
     
     //moved from Employee class
-    public void setAnnualBonus(double annualBonus) {
+    //made private so the method is only controlled by the constructor
+    private void setAnnualBonus(double annualBonus) {
         this.annualBonus = annualBonus;
     }
     
@@ -47,7 +48,8 @@ public class SalariedEmployee implements Employee {
 //    }
     
     //moved from Employee class
-    public void setAnnualSalary(double annualSalary) {
+    //made private so the method is only controlled by the constructor
+    private void setAnnualSalary(double annualSalary) {
         this.annualSalary = annualSalary;
     }
 

@@ -29,9 +29,12 @@ public class HRService {
 //        HOURLY
 //    }
 
-    private static final String ERROR_MSG =
-            "Cannot get annual wages because no valid employee type provided";
-    private static final String ERROR_TITLE = "Employee Type Unknown";
+    //I feel the reconstruction of the classes in this lab eliminates the
+    //need for these messages. Data validation could be provided when the
+    //employee subclass objects are being created.
+//    private static final String ERROR_MSG =
+//            "Cannot get annual wages because no valid employee type provided";
+//    private static final String ERROR_TITLE = "Employee Type Unknown";
 
     /**
      * This is a truly horrible way to make decisions. Very rigid and fragile!

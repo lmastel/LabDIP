@@ -16,6 +16,10 @@ public class HourlyEmployee implements Employee {
     private double totalHrsForYear;
     
     /** default constructor. Is this the best way to go? */
+    //I don't think having a default constructor is the best way.
+    //I want the data passed through the paramatized constructor and
+    //I want the constuctors and called methods to be consistent with
+    //the SalariedEmployee class.
     public HourlyEmployee() {}
 
     /**
@@ -40,7 +44,8 @@ public class HourlyEmployee implements Employee {
     }
     
     //moved from Employee class
-    public void setHourlyRate(double hourlyRate) {
+    //made private so the method is only controlled by the constructor
+    private void setHourlyRate(double hourlyRate) {
         this.hourlyRate = hourlyRate;
     }
     
@@ -50,7 +55,8 @@ public class HourlyEmployee implements Employee {
     }
     
     //moved from Employee class
-    public void setTotalHrsForYear(double totalHrsForYear) {
+    //made private so the method is only controlled by the constructor
+    private void setTotalHrsForYear(double totalHrsForYear) {
         this.totalHrsForYear = totalHrsForYear;
     }
 
