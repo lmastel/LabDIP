@@ -34,23 +34,24 @@ public class BaggageServiceTipCalculator implements TipCalculator  {
         baseTipPerBag = 1.00; // set default value
     }
 
-    public double getTipForBaggeHandler() {
-        double tip = 0.00; // always initialize local variables
-
-        switch(serviceQuality) {
-            case GOOD:
-                tip = baseTipPerBag * bagCount * (1 + GOOD_RATE);
-                break;
-            case FAIR:
-                tip = baseTipPerBag * bagCount * (1 + FAIR_RATE);
-                break;
-            case POOR:
-                tip = baseTipPerBag * bagCount * (1 + POOR_RATE);
-                break;
-        }
-
-        return tip;
-    }
+    //moved to implementation of abstract method getTipForService 
+//    public double getTipForBaggeHandler() {
+//        double tip = 0.00; // always initialize local variables
+//
+//        switch(serviceQuality) {
+//            case GOOD:
+//                tip = baseTipPerBag * bagCount * (1 + GOOD_RATE);
+//                break;
+//            case FAIR:
+//                tip = baseTipPerBag * bagCount * (1 + FAIR_RATE);
+//                break;
+//            case POOR:
+//                tip = baseTipPerBag * bagCount * (1 + POOR_RATE);
+//                break;
+//        }
+//
+//        return tip;
+//    }
 
     //moved to interface class
 //    public final void setServiceRating(ServiceQuality q) {
@@ -95,6 +96,25 @@ public class BaggageServiceTipCalculator implements TipCalculator  {
     @Override
     public ServiceQuality getServiceQuality() {
         return serviceQuality;
+    }
+
+    @Override
+    public double getTipForService() {
+        double tip = 0.00; // always initialize local variables
+
+        switch(serviceQuality) {
+            case GOOD:
+                tip = baseTipPerBag * bagCount * (1 + GOOD_RATE);
+                break;
+            case FAIR:
+                tip = baseTipPerBag * bagCount * (1 + FAIR_RATE);
+                break;
+            case POOR:
+                tip = baseTipPerBag * bagCount * (1 + POOR_RATE);
+                break;
+        }
+
+        return tip;
     }
 
 }

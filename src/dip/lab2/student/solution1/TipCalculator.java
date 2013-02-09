@@ -13,4 +13,6 @@ public interface TipCalculator {
     public abstract void setServiceRating(ServiceQuality q);
     
     public abstract ServiceQuality getServiceQuality();
+    
+    public abstract double getTipForService();
 }
