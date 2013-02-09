@@ -68,7 +68,7 @@ public class Startup {
         // Test input/output by looping over collection in a way that
         // doesn't break if we add/subtract employees from array
         for(int i=0; i < services.length; i++) {
-            System.out.println("Service " + (i+1) + " tip: " + ts.getTip(services[i]));
+            System.out.println("Service " + (i+1) + " tip: " + ts.getTipForService(services[i]));
         }
         
         // Or, we could do this...but this is fragile
