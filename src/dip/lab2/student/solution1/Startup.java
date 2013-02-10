@@ -1,14 +1,8 @@
 package dip.lab2.student.solution1;
 
 // An useful import if you need it.
-import dip.lab1.instructor.solution1.Employee;
-import dip.lab1.instructor.solution1.HRService;
-import dip.lab1.instructor.solution1.HourlyEmployee;
-import dip.lab1.instructor.solution1.SalariedEmployee;
-import dip.lab2.*;
 import java.text.NumberFormat;
 // Another useful import if you need it.
-import javax.swing.JOptionPane;
 
 /**
  * Just a test class for input and output.
@@ -24,9 +18,9 @@ import javax.swing.JOptionPane;
  * @author Larry Mastel
  */
 public class Startup {
-    public static enum ServiceQuality {
-           GOOD, FAIR, POOR
-    };
+//    public static enum ServiceQuality {
+//           GOOD, FAIR, POOR
+//    };
  
     public static void main(String[] args) {
         
@@ -46,9 +40,11 @@ public class Startup {
          */
 
         //Low-level modules
+        //parms (ServiceQuality q, int bags)
        BaggageServiceTipCalculator service1 =  new BaggageServiceTipCalculator(
                 BaggageServiceTipCalculator.ServiceQuality.FAIR,25);
        
+       //parms (ServiceQuality q, double billAmt)
        FoodServiceTipCalculator service2 =  new FoodServiceTipCalculator(
                 FoodServiceTipCalculator.ServiceQuality.FAIR,100.00);
   
@@ -68,8 +64,21 @@ public class Startup {
         // Test input/output by looping over collection in a way that
         // doesn't break if we add/subtract employees from array
         for(int i=0; i < services.length; i++) {
-            System.out.println("Service " + (i+1) + " tip: " + 
+            if (i==0){
+                System.out.println("Bag Count: " + service1.getBagCount()); 
+                System.out.println("Service Quality: " + service1.getServiceQuality());
+                System.out.println("Base Tip Per Bag: " + nf.format(service1.getBaseTipPerBag()));
+                System.out.println("Baggage (Service " + (i+1) + ") tip: " + 
+                    nf.format(ts.getTipForService(services[i]))); 
+                System.out.println("");
+            }
+            else {
+                System.out.println("Bill Amount: " + nf.format(service2.getBill()));
+                System.out.println("Service Quality: " + service2.getServiceQuality());
+                System.out.println("Food  (Service " + (i+1) + ") tip: " + 
                     nf.format(ts.getTipForService(services[i])));
+            }
+            
         }
         
         // Or, we could do this...but this is fragile

@@ -32,23 +32,23 @@ public class BaggageServiceTipCalculator {
         baseTipPerBag = 1.00; // set default value
     }
 
-    public double getTipForBaggeHandler() {
-        double tip = 0.00; // always initialize local variables
-
-        switch(serviceQuality) {
-            case GOOD:
-                tip = baseTipPerBag * bagCount * (1 + GOOD_RATE);
-                break;
-            case FAIR:
-                tip = baseTipPerBag * bagCount * (1 + FAIR_RATE);
-                break;
-            case POOR:
-                tip = baseTipPerBag * bagCount * (1 + POOR_RATE);
-                break;
-        }
-
-        return tip;
-    }
+//    public double getTipForBaggeHandler() {
+//        double tip = 0.00; // always initialize local variables
+//
+//        switch(serviceQuality) {
+//            case GOOD:
+//                tip = baseTipPerBag * bagCount * (1 + GOOD_RATE);
+//                break;
+//            case FAIR:
+//                tip = baseTipPerBag * bagCount * (1 + FAIR_RATE);
+//                break;
+//            case POOR:
+//                tip = baseTipPerBag * bagCount * (1 + POOR_RATE);
+//                break;
+//        }
+//
+//        return tip;
+//    }
 
     public final void setServiceRating(ServiceQuality q) {
         // No need to validate because enums provide type safety!

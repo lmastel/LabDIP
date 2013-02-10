@@ -20,15 +20,7 @@ public class FoodServiceTipCalculator implements TipCalculator {
 
     private double bill;
 
-    @Override
-    public void setServiceRating(ServiceQuality q) {
-        serviceQuality = q;
-    }
-
-    @Override
-    public ServiceQuality getServiceQuality() {
-        return serviceQuality;
-    }
+    
 //    public enum ServiceQuality {
 //        GOOD, FAIR, POOR
 //    }
@@ -40,23 +32,23 @@ public class FoodServiceTipCalculator implements TipCalculator {
     }
 
     //move to implementation of abstract method getTipForService
-    public double getTip() {
-        double tip = 0.00; // always initialize local variables
-
-        switch(serviceQuality) {
-            case GOOD:
-                tip = bill * GOOD_RATE;
-                break;
-            case FAIR:
-                tip = bill * FAIR_RATE;
-                break;
-            case POOR:
-                tip = bill * POOR_RATE;
-                break;
-        }
-
-        return tip;
-    }
+//    public double getTip() {
+//        double tip = 0.00; // always initialize local variables
+//
+//        switch(serviceQuality) {
+//            case GOOD:
+//                tip = bill * GOOD_RATE;
+//                break;
+//            case FAIR:
+//                tip = bill * FAIR_RATE;
+//                break;
+//            case POOR:
+//                tip = bill * POOR_RATE;
+//                break;
+//        }
+//
+//        return tip;
+//    }
 
     public final void setBill(double billAmt) {
         if(billAmt < MIN_BILL) {
@@ -64,15 +56,33 @@ public class FoodServiceTipCalculator implements TipCalculator {
         }
         bill = billAmt;
     }
+    
+    //add get
+    public double getBill() {
+        return bill;
+    }
+    
 
+    //moved to implementation of abstract method
 //    public final void setServiceRating(ServiceQuality q) {
 //        // No need to validate because enums provide type safety!
 //        serviceQuality = q;
 //    }
 
+    //moved to implementation of abstract method
 //    public ServiceQuality getServiceQuality() {
 //        return serviceQuality;
 //    }
+
+    @Override
+    public void setServiceRating(ServiceQuality q) {
+        serviceQuality = q;
+    }
+
+    @Override
+    public ServiceQuality getServiceQuality() {
+        return serviceQuality;
+    }
 
     @Override
     public double getTipForService() {
@@ -92,5 +102,7 @@ public class FoodServiceTipCalculator implements TipCalculator {
 
         return tip;
     }
+
+    
 
 }
