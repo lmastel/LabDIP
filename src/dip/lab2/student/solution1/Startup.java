@@ -31,22 +31,20 @@ public class Startup {
 //                new BaggageServiceTipCalculator(
 //                BaggageServiceTipCalculator.ServiceQuality.FAIR,5);
 //        
-        
-              
-        
+               
         /*
          * We'll just use this class for testing our ccde.
          * We'll provide input and get some output...
          */
 
         //Low-level modules
-        //parms (ServiceQuality q, int bags)
+        //parms (ServiceQuality, bags)
        BaggageServiceTipCalculator service1 =  new BaggageServiceTipCalculator(
-                BaggageServiceTipCalculator.ServiceQuality.FAIR,25);
+                TipCalculator.ServiceQuality.FAIR,8);               
        
-       //parms (ServiceQuality q, double billAmt)
+       //parms (ServiceQuality, billAmt)
        FoodServiceTipCalculator service2 =  new FoodServiceTipCalculator(
-                FoodServiceTipCalculator.ServiceQuality.FAIR,100.00);
+                TipCalculator.ServiceQuality.GOOD,100.00);
   
         
         
